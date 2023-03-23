@@ -1,9 +1,12 @@
+var flag=0;
+
 	function initialize_page(){
 //		document.getElementById("show_timer_val").innerHTML=00+":"+00+":"+30+"	or	"+30+" s";
 		start_time();
 		initialize_stopwatch();
-		clockInit();
+//		clockInit();
 //		document.getElementById("defaultOpen").click();
+			//0 - timer not running; 1- timer running. 
 	}
 	
 	/*------------------------------*/
@@ -27,8 +30,23 @@
 		var T_mm=document.getElementById("timer_mm").value;
 		var T_ss=document.getElementById("timer_ss").value;
 		T_ss=+T_ss+(60*T_mm)+(3600*T_hh);
-		x = setInterval(function() {
-		if (T_ss>=0) {	T_ss=decrease(T_ss)}}, 1000);
+		if (T_ss>0) {
+			if (flag==0) {
+				flag=1;
+				x = setInterval(function() {	T_ss=decrease(T_ss)}, 1000);
+			}
+			else {
+				clearInterval(x);
+				x = setInterval(function() {	T_ss=decrease(T_ss)}, 1000);
+			}
+		}
+		else {
+			clearInterval(x);
+			T_ss=0;
+			flag=0;
+		}
+/*		x = setInterval(function() {
+		if (T_ss>=0) {	T_ss=decrease(T_ss)}}, 1000);*/
 	}
 	
 	function decrease (a)
@@ -41,7 +59,7 @@
 		var nm=acopy%60;
 		acopy=acopy-nm;
 		var nh=acopy/60;
-		document.getElementById("show_timer_val").innerHTML=nh+":"+nm+":"+ns+"	or	"+a+" s";
+		if (a>=0) {document.getElementById("show_timer_val").innerHTML=nh+":"+nm+":"+ns+"	or	"+a+" s";}
 		if (a<0) { clearInterval(x);}
 		return a-1;
 	}
@@ -49,7 +67,9 @@
 	function reset_timer()
 	{
 		clearInterval(x);
-		document.getElementById("timer_hh").value.innerHTML=0;
+/*		document.getElementById("timer_hh").value.innerHTML=0;
+		document.getElementById("timer_mm").value.innerHTML=0;
+		document.getElementById("timer_ss").value.innerHTML=30;*/
 	}
 	
 	
