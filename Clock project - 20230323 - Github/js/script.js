@@ -207,6 +207,7 @@ var flag=0;
 		const element5=document.getElementById("refer5");
 		const element6=document.getElementById("refer6");
 		const element7=document.getElementById("refer7");
+		const element8=document.getElementById("refer8");
 		if (pageName=="ref1")
 		{
 			
@@ -218,6 +219,7 @@ var flag=0;
 			element5.innerHTML="";
 			element6.innerHTML="";
 			element7.innerHTML="";
+			element8.innerHTML="";
 		}
 		if (pageName=="ref2")
 		{
@@ -235,6 +237,8 @@ var flag=0;
 			element6.innerHTML="<a href='https://webhint.io/' target='_blank'>"+element6.href+"</a>";
 			element7.href="https://www.codeproject.com/";
 			element7.innerHTML="<a href='https://www.codeproject.com/' target='_blank'>"+element7.href+"</a>";
+			element8.href="https://www.youtube.com/";
+			element8.innerHTML="<a href='https://www.youtube.com/' target='_blank'>"+element8.href+"</a>";
 		}
 		
 			

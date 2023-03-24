@@ -1,5 +1,9 @@
 @media screen and (min-width: 860px){
 
+#statement {
+	color:red;
+}
+
 .row {
 	clear:both;
 	width: 100%;
