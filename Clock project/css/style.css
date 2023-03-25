@@ -1,7 +1,29 @@
-@media screen and (min-width: 860px){
+body {
+	background-color:#979A9A;
+}
 
+#inspiration {
+	background-color:#D4E6F1;
+}
 #statement {
 	color:red;
+	font-size:small;
+}
+.row {
+	background-color:white;
+}
+
+@media screen and (min-width: 860px){
+
+#inspiration {
+	width: 100%;
+	text-align: center;
+
+}
+
+#statement {
+	margin-left: 7.5%;
+	margin-right: 7.5%;
 }
 
 .row {

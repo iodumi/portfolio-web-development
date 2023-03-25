@@ -208,6 +208,10 @@ var flag=0;
 		const element6=document.getElementById("refer6");
 		const element7=document.getElementById("refer7");
 		const element8=document.getElementById("refer8");
+		const element9=document.getElementById("refer9");
+		
+		
+		
 		if (pageName=="ref1")
 		{
 			
@@ -220,6 +224,7 @@ var flag=0;
 			element6.innerHTML="";
 			element7.innerHTML="";
 			element8.innerHTML="";
+			element9.innerHTML="";
 		}
 		if (pageName=="ref2")
 		{
@@ -239,6 +244,8 @@ var flag=0;
 			element7.innerHTML="<a href='https://www.codeproject.com/' target='_blank'>"+element7.href+"</a>";
 			element8.href="https://www.youtube.com/";
 			element8.innerHTML="<a href='https://www.youtube.com/' target='_blank'>"+element8.href+"</a>";
+			element9.href="https://htmlcolorcodes.com/";
+			element9.innerHTML="<a href='https://htmlcolorcodes.com/' target='_blank'>"+element9.href+"</a>";
 		}
 		
 			
