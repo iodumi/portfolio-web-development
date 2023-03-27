@@ -1,0 +1,23 @@
+table {
+	width:265px;
+	height:30px;
+	border:1px solid;
+	border-color:black;
+}
+
+.number_button {
+	width:50px;
+	height:30px;
+}
+
+.sign_button {
+	width:50px;
+	height:30px;
+	background-color:#EDBB99;
+}
+
+.equal_and_memory_button {
+	width:100px;
+	height:30px;
+	background-color:#82E0AA;
+}

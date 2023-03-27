@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>Calculator></title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset='utf-8'>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
+</head>
+<body onload="on_load_func()">
+  <table>
+<!--	<tr><td><p id="display"></p></td></tr>-->
+<tr id="display"></tr>
+  </table>
+  
+  <button type="button" class="number_button" onclick="receive_and_display(7)" id="b7" value="7">7</button>
+  <button type="button" class="number_button" onclick="receive_and_display(8)" id="b8">8</button>
+  <button type="button" class="number_button" onclick="receive_and_display(9)" id="b9">9</button>
+  <button type="button" class="sign_button" onclick="receive_operator_minus()">-</button>
+  <button type="button" class="sign_button" onclick="receive_operator_plus()"">+</button>
+  <br>
+  <button type="button" class="number_button" onclick="receive_and_display(4)">4</button>
+  <button type="button" class="number_button" onclick="receive_and_display(5)">5</button>
+  <button type="button" class="number_button" onclick="receive_and_display(6)">6</button>
+  <button type="button" class="sign_button" onclick="receive_operator_divide()"">/</button>
+  <button type="button" class="sign_button" onclick="receive_operator_multiply()"">*</button>
+  <br>
+  <button type="button" class="number_button" onclick="receive_and_display(1)">1</button>
+  <button type="button" class="number_button" onclick="receive_and_display(2)">2</button>
+  <button type="button" class="number_button" onclick="receive_and_display(3)">3</button>
+  <button type="button" class="equal_and_memory_button">Mem</button>
+  <br>
+  <button type="button" class="number_button" onclick="change_sign()">+/-</button>
+  <button type="button" class="number_button" onclick="receive_and_display(0)">0</button>
+  <button type="button" class="number_button" onclick="receive_dot()">.</button>
+  <button type="button" class="equal_and_memory_button" onclick="receive_operator_equal()">=</button>
+  
+  
+</body>
+</html>
+
+
+<!--
+Resources:
+https://www.geeksforgeeks.org/top-10-javascript-project-ideas-for-beginners/	//
+https://github.com/iodumi/portfolio-web-development/tree/main/Clock%20project	//
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_numbers_inaccurate2 //
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_numbers_inaccurate3 //
+https://www.w3schools.com/js/js_numbers.asp //
+https://www.google.com/ //
+https://binary-system.base-conversion.ro/convert-real-numbers-from-decimal-system-to-64bit-double-precision-IEEE754-binary-floating-point.php //
+https://www.geeksforgeeks.org/javascript-numbers/?ref=lbp //
+-->
