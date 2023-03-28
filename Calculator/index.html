@@ -10,9 +10,10 @@
   <script src="js/script.js"></script>
 </head>
 <body onload="on_load_func()">
+  <textarea autofocus rows="1" cols="1" maxlength="1"display="none" id="myTextarea" onkeyup="check_textarea()"></textarea>
   <table>
 <!--	<tr><td><p id="display"></p></td></tr>-->
-<tr id="display"></tr>
+	<tr id="display"></tr>
   </table>
   
   <button type="button" class="number_button" onclick="receive_and_display(7)" id="b7" value="7">7</button>
@@ -36,7 +37,6 @@
   <button type="button" class="number_button" onclick="receive_and_display(0)">0</button>
   <button type="button" class="number_button" onclick="receive_dot()">.</button>
   <button type="button" class="equal_and_memory_button" onclick="receive_operator_equal()">=</button>
-  
   
 </body>
 </html>
