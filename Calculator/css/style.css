@@ -2,6 +2,11 @@ textarea {
 	rows:1;
 	cols:1;
 	maxlength:1;
+/*	visibility:hidden;*/
+	outline:none;
+	color:white;
+	border:none;
+	float:none;
 }
 
 table {
@@ -9,6 +14,7 @@ table {
 	height:30px;
 	border:1px solid;
 	border-color:black;
+	float:left;
 }
 
 .number_button {

@@ -9,7 +9,6 @@ function on_load_func() {
 	count_after_dot2=10;
 	y=0;
 	z=0;
-		
 }
 
 function check_textarea(){
@@ -94,12 +93,14 @@ function receive_and_display(val) {
 	console.log("y", y);
 	console.log("z", z);
 	
+	document.getElementById("myTextarea").focus();
 }
 
 function receive_dot() {
 	if (flag_xy==1) {	flag_dot1=1;}
 	else if (flag_xy==2) {flag_dot2=1;}
 	else {alert("error3");}
+	document.getElementById("myTextarea").focus();
 }
 
 function change_sign() {
@@ -115,30 +116,35 @@ function change_sign() {
 		document.getElementById("display").innerHTML=z;
 	}
 	else {alert("error change_sign function");}
+	document.getElementById("myTextarea").focus();
 }
 
 function receive_operator_plus() {
 	flag_operator=0;
 	flag_xy=2;
 	flag_sign=1;
+	document.getElementById("myTextarea").focus();
 }
 
 function receive_operator_minus() {
 	flag_operator=1;
 	flag_xy=2;
 	flag_sign=1;
+	document.getElementById("myTextarea").focus();
 }
 
 function receive_operator_multiply() {
 	flag_operator=2;
 	flag_xy=2;
 	flag_sign=1;
+	document.getElementById("myTextarea").focus();
 }
 
 function receive_operator_divide() {
 	flag_operator=3;
 	flag_xy=2;
 	flag_sign=1;
+	document.getElementById("myTextarea").focus();
 }
 
 function receive_operator_equal() {
@@ -170,5 +176,6 @@ function receive_operator_equal() {
 	}
 	else {alert("error2");
 	}
+	document.getElementById("myTextarea").focus();
 	on_load_func();
 }
