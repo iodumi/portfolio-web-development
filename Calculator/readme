@@ -1,0 +1,10 @@
+Greetings,
+
+Welcome to my version of Calculator.
+
+Facts on the version from 28/03/2023 :
+- numbers and signs can be input from keyboard or using mouse to click on the buttons that appear on the screen;
+- only 2 number operations can be performed
+- the result from a previous operation is not used as first number for the succeding operation; hence, first number must be input by user.
+
+Best regards.
