@@ -9,6 +9,12 @@ function on_load_func() {
 	count_after_dot2=10;
 	y=0;
 	z=0;
+	
+//	document.getElementById("myTextarea").focus();
+	
+	document.addEventListener("click", function() {
+		document.getElementById("myTextarea").focus();
+	});
 }
 
 function check_textarea(){
@@ -20,6 +26,7 @@ function check_textarea(){
 //		receive_operator_equal();}
 //	}
 //	})
+//	document.addEventListener("click")
 	if (event.keyCode===13) {
 	receive_operator_equal();
 	}
