@@ -15,7 +15,7 @@ textarea {
 
 table {
 	width:265px;
-	height:30px;
+	height:40px;
 	border:1px solid;
 	border-color:black;
 	float:left;
@@ -23,21 +23,27 @@ table {
 
 .number_button {
 	width:50px;
-	height:30px;
+	height:40px;
+	font-weight:bold;
+	font-size:20px;
 }
 
 .sign_button {
 	width:50px;
-	height:30px;
+	height:40px;
 	background-color:#EDBB99;
+	font-weight:bold;
+	font-size:20px;
 }
 
 .backspace_button {
-	height:30px;
+	height:50px;
 }
 
 .equal_and_memory_button {
 	width:100px;
-	height:30px;
+	height:40px;
 	background-color:#82E0AA;
+	font-weight:bold;
+	font-size:20px;
 }
