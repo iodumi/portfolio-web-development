@@ -9,6 +9,10 @@ textarea {
 	float:none;
 }
 
+#display {
+	text-align:right;
+}
+
 table {
 	width:265px;
 	height:30px;
@@ -26,6 +30,10 @@ table {
 	width:50px;
 	height:30px;
 	background-color:#EDBB99;
+}
+
+.backspace_button {
+	height:30px;
 }
 
 .equal_and_memory_button {

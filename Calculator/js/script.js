@@ -30,6 +30,9 @@ function check_textarea(){
 	if (event.keyCode===13) {
 	receive_operator_equal();
 	}
+	else if (event.keyCode===8) {
+	receive_backspace();
+	}
 	else if (a>=0 && a<=9) {
 		console.log("a09", a);
 	receive_and_display(a);
@@ -154,6 +157,23 @@ function receive_operator_divide() {
 	document.getElementById("myTextarea").focus();
 }
 
+function receive_backspace()
+{
+	if (flag_xy==1) {
+		y=Math.floor(y/10);
+		console.log("y bcksp", y);
+		document.getElementById("display").innerHTML=y;
+	}
+	else if (flag_xy==2) {
+		z=Math.floor(z/10);
+		console.log("z bcksp", z);
+		document.getElementById("display").innerHTML=z;
+	}
+	else {
+		alert("error receive_backspace");
+	}	
+}
+
 function receive_operator_equal() {
 	console.log("=func y", y, "z", z, "flag_operator", flag_operator);
 	var mult=1;
@@ -179,7 +199,12 @@ function receive_operator_equal() {
 		document.getElementById("display").innerHTML=(mult*(+y)*(+z))/mult;
 	}
 	else if (flag_operator==3) {
+		if (z==0) {
+			document.getElementById("display").innerHTML="INFINITY";
+		}
+		else {
 		document.getElementById("display").innerHTML=(mult*(+y))/(mult*(+z));
+		}
 	}
 	else {alert("error2");
 	}
