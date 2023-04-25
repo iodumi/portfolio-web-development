@@ -62,6 +62,15 @@ ul li:hover ul {
 
 ul li {display: inline-block;}
 
+.grid-item01 {
+  grid-area: myArea01;
+}
+
+.grid-item03 {
+  grid-area: myArea03;
+}
+
+
 .grid-item1 {
   grid-area: myArea1;
 }
@@ -92,10 +101,17 @@ ul li {display: inline-block;}
   grid-gap: 10px;
   padding: 10px;
   grid-template-areas:
-   'myArea1'
    'myArea2'
-   'myArea4'
-   'myArea3';
+   'myArea1';
+}
+
+	.grid-container2 {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-template-areas:
+   'myArea3'
+   'myArea4';
 }}
 
 .grid-container > div {
@@ -112,7 +128,15 @@ ul li {display: inline-block;}
   margin-left:17.5%;
   margin-right:17.5%;
   grid-template-areas:
-     'myArea1 myArea2'
+     'myArea1 myArea2';
+}
+.grid-container2 {
+  display: grid;
+/*  grid-gap: 10px;
+  padding: 10px;*/
+  margin-left:17.5%;
+  margin-right:17.5%;
+  grid-template-areas:
      'myArea3 myArea4';
 }
 }
