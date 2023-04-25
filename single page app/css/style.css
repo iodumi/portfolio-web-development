@@ -1,3 +1,21 @@
+#name {
+	float:left;
+}
+
+.selected-language-default {
+	cursor:pointer;
+	float:right;
+}
+
+.switch-languages-menu ul li {
+	display:none;
+	float:right;
+}
+
+.switch-languages-menu:hover ul li {
+	display:block;
+}
+
 .small_capture {
 	height: 150 px;
 	width: 300 px;
@@ -112,7 +130,11 @@ ul li {display: inline-block;}
   grid-template-areas:
    'myArea3'
    'myArea4';
-}}
+}
+#switch_language_large_screen {
+	display:none;
+}
+}
 
 .grid-container > div {
 	padding:20px 0;
@@ -138,5 +160,9 @@ ul li {display: inline-block;}
   margin-right:17.5%;
   grid-template-areas:
      'myArea3 myArea4';
+}
+
+#switch_language_small_screen {
+	display:none;
 }
 }
