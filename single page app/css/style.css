@@ -1,0 +1,118 @@
+.small_capture {
+	height: 150 px;
+	width: 300 px;
+	size: 30%;
+}
+
+.text_left {
+	float:left;
+}
+
+.text_right {
+	float:right;
+}
+
+body {
+	margin:2.5%;
+	background-color:#111166;
+}
+table {
+	margin-left:2.5%;
+	margin-right:2.5%;
+	margin-top:80px;
+	margin-bottom:80px;
+	width:80%;
+}
+
+.right_cell
+{
+	text-align:right;
+	font-size:25px;
+	font-weight:bold;
+	color:#22AA22;
+	text-shadow: 1px 1px red;
+}
+
+.left_cell
+{
+/*	text-align:left;*/
+	font-size:25px;
+	font-weight:bold;
+	color:#22AA22;
+	text-shadow: -1px 1px red;
+}
+
+.td1 {
+  border-bottom: 2px solid #448844;
+}
+
+.hr1 {
+	width:75%;
+	margin-left:12.5%;
+	border:1.5px solid #448844;
+}
+
+ul li ul {
+	display:none;
+}
+
+ul li:hover ul {
+	display:block;
+}
+
+ul li {display: inline-block;}
+
+.grid-item1 {
+  grid-area: myArea1;
+}
+
+.grid-item2 {
+  grid-area: myArea2;
+}
+
+.grid-item3 {
+  grid-area: myArea3;
+}
+
+.grid-item4 {
+  grid-area: myArea4;
+}
+
+#right_image{
+	text-align:right;
+}
+
+#left_image{
+	text-align:left;
+}
+
+@media screen and (max-width: 549px){
+	.grid-container1 {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-template-areas:
+   'myArea1'
+   'myArea2'
+   'myArea4'
+   'myArea3';
+}}
+
+.grid-container > div {
+	padding:20px 0;
+}
+
+
+
+@media screen and (min-width: 550px){
+	.grid-container1 {
+  display: grid;
+/*  grid-gap: 10px;
+  padding: 10px;*/
+  margin-left:17.5%;
+  margin-right:17.5%;
+  grid-template-areas:
+     'myArea1 myArea2'
+     'myArea3 myArea4';
+}
+}
