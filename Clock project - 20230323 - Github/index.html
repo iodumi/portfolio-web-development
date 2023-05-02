@@ -1,121 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Clock project</title>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset='utf-8'>
-	
-	<link rel="stylesheet" href="css/style.css">
-	<script src="js/script.js"></script>
-	
-</head>
+<html>
+<body>
 
-<body onload="initialize_page()">	<!--at start time-->
-	<p><h2>project inspired by <a href="https://www.geeksforgeeks.org/top-10-javascript-project-ideas-for-beginners/" target="_blank">https://www.geeksforgeeks.org/top-10-javascript-project-ideas-for-beginners/</a></h2></p>
-	<br>
-	<p id="statement">Kindly please let me know if you consider this project (html, js, css) having harmful or offensive content or disrespecting intellectual property. Thank you and please accept my apologies. Kindly please use the email address in the job application and kindly please do not write an offensive email.</p>
-	<br><br>
-	<div class="row">
-		<div class="column">
-			<div id="column1">
-				<div>
-					<form>
-						<h4><label for="alarm1datetime">Alarm 1: </label><input type="datetime-local" name="n_alarm1datetime" id="alarm1datetime" value=""></input></h4><br>
-<!--						<label="n_alarm1datetime">Alarm 1: <input type="datetime-local" name="n_alarm1datetime" id="alarm1datetime" value=""></label><br>-->
-										<!--			Alarm 2: <input type="datetime-local" name="n_alarm2datetime" id="alarm2datetime"></input><br>
-													Alarm 3: <input type="datetime-local" name="n_alarm3datetime" id="alarm3datetime"></input><br> -->
-					</form>
-				</div>
-										<!--	<p id="p1"></p>
-											<p id="p2"></p>-->
-			</div>
-		</div>
-											
-		<div class="column">
-			<div id="column2">
-				<h3><p id="jsDate"></p></h3>			<!--current date and time-->
-											<!--Canvas-->
-<				<div>
-										<!--		<canvas id="canvas" width="400" height="400" style="background-color:#333"></canvas> -->
-<!--					<canvas id="canvas"></canvas>-->
-				</div>
-<!--				<p>copied from <a href="https://www.w3schools.com/graphics/canvas_clock.asp" target="_blank"> https://www.w3schools.com/graphics/canvas_clock.asp </a></p> -->
-					<p>clock can be found on <a href="https://www.w3schools.com/graphics/tryit.asp?filename=trycanvas_clock_start" target="_blank"> https://www.w3schools.com/graphics/tryit.asp?filename=trycanvas_clock_start </a></p>
-			</div>
-		</div>
-											
-		<div class="column">
-			<div id="column3">
-				<div>
+<?php
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-											<!--HTML part for Timer below-->
-											
-				<div>
-					<h4>Timer</h4>
-					<p>
-						<input type="timer_value" name="n_hh" id="timer_hh" value="00"></input><label for="timer_hh">hh: </label>
-						<input type="timer_value" name="n_mm" id="timer_mm" value="00"></input><label for="timer_mm">mm: </label>
-						<input type="timer_value" name="n_ss" id="timer_ss" value="30"></input><label for="timer_ss">ss</label>
-					</p>
-												
-					<button type="button" onclick="start_timer()">Start</button>
-					<button type="reset" onclick="reset_timer()">Reset</button>
-					<p id="show_timer_val"></p>
-				</div>
-											<!--end of HTML part for Timer-->
-											
-											
-											<!-------------------------------------------------------------------------------------------->
-											<!--HTML part for Stopwatch below-->
-				<div>
-					<h4>Stopwatch</h4>
-					<p id="stopwatch_value"></p>
-												
-					<br>
-					<button type="button" onclick="start_stopwatch()">Start</button>
-					<button type="button" onclick="stop_stopwatch()">Stop</button>
-					<button type="reset" onclick="reset_stopwatch()">Reset</button>
-					<p id="show_timer_val"></p>
-				</div>
-											<!--end of HTML part for Stopwatch-->							
-											
-				</div>
-			</div>
-		</div>
-											
-	</div>	<!--class row-->										
-											<!-- references bottom-->
-	<br>
-	<p><h4>Links to sites useful to this project</h4></p>
-	<div id="ref">
-		<button type="button" class="tablink" onclick="openPage('ref1')">Idea link</button>
-		<button type="button" class="tablink" onclick="openPage('ref2')" id="defaultOpen">Helpful</button>
-		<p id ="refer1"></p>
-		<p id ="refer2"></p>
-		<p id ="refer3"></p>
-		<p id ="refer4"></p>
-		<p id ="refer5"></p>
-		<p id ="refer6"></p>
-		<p id ="refer7"></p>
-		<p id ="refer8"></p>
-	</div>
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'user@example.com';                     //SMTP username
+    $mail->Password   = 'secret';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('from@example.com', 'Mailer');
+    $mail->addAddress('ioana.dumitrache2010@gmail.com');     //Add a recipient
+    $mail->addAddress('ellen@example.com');               //Name is optional
+    $mail->addReplyTo('info@example.com', 'Information');
+    $mail->addCC('cc@example.com');
+    $mail->addBCC('bcc@example.com');
+
+    //Attachments
+    $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
 
 </body>
 </html>
-
-
-<!--sources://
-https://www.geeksforgeeks.org/top-10-javascript-project-ideas-for-beginners/		//
-https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock	//
-https://www.w3schools.com/jsref/met_win_settimeout.asp //
-https://www.w3schools.com/js/js_if_else.asp	//
-https://www.google.com/search?q=stopwatch&source=hp&ei=IOMFZK2LNYmugQblj5eACw&iflsig=AK50M_UAAAAAZAXxME1WHPpbq-H9I1L41opbpX5LTOUg&ved=0ahUKEwitm9Gnrcf9AhUJV8AKHeXHBbAQ4dUDCAg&uact=5&oq=stopwatch&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEUABYAGDaBGgAcAB4AIABV4gBV5IBATGYAQCgAQKgAQE&sclient=gws-wiz	//
-https://flexiple.com/javascript/javascript-clock/	//
-https://www.google.com/	//
-https://www.w3schools.com/jsref/prop_html_innerhtml.asp	//
-https://dequeuniversity.com/rules/axe/4.4/label-title-only //
-https://webhint.io/docs/user-guide/hints/hint-axe/forms/?source=devtools //
-https://www.codeproject.com/Articles/762201/Adjusting-your-Websites-to-Fit-all-Types-of-Resolu  //
-https://www.youtube.com/watch?v=jlzcE1F1vwo  //
--->
