@@ -6,49 +6,53 @@
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+//use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
-require 'vendor/autoload.php';
+require 'phpmailer/src/Exception.php'
+require 'phpmailer/src/PHPMailer.php'
+require 'phpmailer/src/SMTP.PHP'
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
 
-try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'user@example.com';                     //SMTP username
-    $mail->Password   = 'secret';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-    //Recipients
-    $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress('ioana.dumitrache2010@gmail.com');     //Add a recipient
-    $mail->addAddress('ellen@example.com');               //Name is optional
-    $mail->addReplyTo('info@example.com', 'Information');
-    $mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');
-
-    //Attachments
-    $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+require 'class.phpmailer.php';
+ 
+$yahoo_mail = new PHPMailer;
+ 
+$yahoo_mail->IsSMTP();
+// Send email using Yahoo SMTP server
+$yahoo_mail->Host = 'smtp.mail.yahoo.com';
+// port for Send email
+$yahoo_mail->Port = 465;
+$yahoo_mail->SMTPSecure = 'ssl';
+$yahoo_mail->SMTPDebug = 1;
+$yahoo_mail->SMTPAuth = true;
+$yahoo_mail->Username = 'ioanadum_2004@Yahoo.com';
+$yahoo_mail->Password = 'yo1984nnutza';
+ 
+$yahoo_mail->From = 'your-Yahoo-address@Yahoo.com';
+$yahoo_mail->FromName = 'Your From name';// frome name
+$yahoo_mail->AddAddress('ioanadum_2004@Yahoo.com', 'To Name');  // Add a recipient  to name
+//$yahoo_mail->AddAddress('to-Yahoo-address@Yahoo.com');  // Name is optional
+ 
+$yahoo_mail->IsHTML(true); // Set email format to HTML
+ 
+$yahoo_mail->Subject = 'Here is the subject for onlinecode';
+$yahoo_mail->Body    = 'Send email using Yahoo SMTP server <br>This is the HTML message body <strong>in bold!</strong> <a href="https://onlinecode.org/" target="_blank">onlincode.org</a>';
+$yahoo_mail->AltBody = 'This is the body in plain text for non-HTML mail clients at https://onlinecode.org/';
+ 
+if(!$yahoo_mail->Send()) {
+echo 'Message could not be sent.';
+echo 'Mailer Error: ' . $yahoo_mail->ErrorInfo;
+exit;
 }
+else
+{
+echo 'Message of Send email using Yahoo SMTP server has been sent';
+}
+
+
+?>
+
 
 </body>
 </html>
