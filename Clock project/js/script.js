@@ -1,12 +1,8 @@
 var flag=0;
 
 	function initialize_page(){
-//		document.getElementById("show_timer_val").innerHTML=00+":"+00+":"+30+"	or	"+30+" s";
 		start_time();
-		initialize_stopwatch();
-//		clockInit();
-//		document.getElementById("defaultOpen").click();
-			//0 - timer not running; 1- timer running. 
+		initialize_stopwatch(); 
 	}
 	
 	/*------------------------------*/
@@ -14,7 +10,7 @@ var flag=0;
 	
 	function start_time() {
 	var A = new Date();
-    document.getElementById("jsDate").innerHTML=A;
+//    document.getElementById("jsDate").innerHTML=A;
 	var a1 = document.getElementById("alarm1datetime").value;
 	var a11=new Date(a1);
 	var Aparse=Date.parse(A);
@@ -45,8 +41,6 @@ var flag=0;
 			T_ss=0;
 			flag=0;
 		}
-/*		x = setInterval(function() {
-		if (T_ss>=0) {	T_ss=decrease(T_ss)}}, 1000);*/
 	}
 	
 	function decrease (a)
@@ -67,9 +61,6 @@ var flag=0;
 	function reset_timer()
 	{
 		clearInterval(x);
-/*		document.getElementById("timer_hh").value.innerHTML=0;
-		document.getElementById("timer_mm").value.innerHTML=0;
-		document.getElementById("timer_ss").value.innerHTML=30;*/
 	}
 	
 	
