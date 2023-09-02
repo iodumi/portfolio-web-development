@@ -16,7 +16,7 @@ var ym = p * 15;	//minutes
 var xh = p * 15;	//hours
 var yh = p * 15;	//hours
 var radiuss = p * 2;
-var dist = p * 180;
+var dist = p * 173;
 var dists = p * 180;
 var distm = p * 185;
 var disth = p * 120;
@@ -45,8 +45,8 @@ c.stroke();
 	
 for (var i = 0; i < 60; i++) {
   if (i % 5 == 0) {
-	xs = xcanv - (dist * Math.sin(anglen)) + xc;
-	ys = ycanv - (dist * Math.cos(anglen)) + yc;
+	xs = xcanv - (dist * Math.sin(anglen)) + xc - 2;
+	ys = ycanv - (dist * Math.cos(anglen)) + yc + 4;
 	c.beginPath();
 	c.strokeStyle = 'black';
 	c.font = "bold 24px serif";
