@@ -45,14 +45,14 @@ function start_time_c() {
 	
   for (var i = 0; i < 60; i++) {
     if (i % 5 == 0) {
-	  xs = xcanv - (dist * Math.sin(anglen)) + xc - 2;
-	  ys = ycanv - (dist * Math.cos(anglen)) + yc + 4;
-	  c.beginPath();
-	  c.strokeStyle = 'black';
-	  c.font = "bold 24px serif";
-	  c.fillText(i/5+1, xs, ys);
-	  anglen -= Math.PI / 6;
-	  anglep -= Math.PI / 30;
+      xs = xcanv - (dist * Math.sin(anglen)) + xc - 2;
+      ys = ycanv - (dist * Math.cos(anglen)) + yc + 4;
+      c.beginPath();
+      c.strokeStyle = 'black';
+      c.font = "bold 24px serif";
+      c.fillText(i/5+1, xs, ys);
+      anglen -= Math.PI / 6;
+      anglep -= Math.PI / 30;
     }
     else {
       xs = xcanv - (dist * Math.sin(anglep));
