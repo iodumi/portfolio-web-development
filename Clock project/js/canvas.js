@@ -34,42 +34,41 @@ var ho = A.getHours();
 var i=0;
 
 function start_time_c() {
-	A = new Date();
-	document.getElementById("jsDate").innerHTML=A;
-	c.clearRect(0, 0, p * 400, p * 400);
+  A = new Date();
+  document.getElementById("jsDate").innerHTML=A;
+  c.clearRect(0, 0, p * 400, p * 400);
 	
-	c.beginPath();
-c.arc(xcanv, ycanv, radius, 0, Math.PI * 2, false);
-c.strokeStyle = 'black';
-c.stroke();
-	
-for (var i = 0; i < 60; i++) {
-  if (i % 5 == 0) {
-	xs = xcanv - (dist * Math.sin(anglen)) + xc - 2;
-	ys = ycanv - (dist * Math.cos(anglen)) + yc + 4;
-	c.beginPath();
-	c.strokeStyle = 'black';
-	c.font = "bold 24px serif";
-	c.fillText(i/5+1, xs, ys);
-	anglen -= Math.PI / 6;
-	anglep -= Math.PI / 30;
-  }
-  else {
-  xs = xcanv - (dist * Math.sin(anglep));
-  ys = ycanv - (dist * Math.cos(anglep));
   c.beginPath();
-  c.arc(xs, ys, radiuss, 0, Math.PI * 2, false);
-  c.strokeStyle = '#39FF14';	//'black';
+  c.arc(xcanv, ycanv, radius, 0, Math.PI * 2, false);
+  c.strokeStyle = 'black';
   c.stroke();
-  c.fillStyle = '#39FF14';
-  c.fill();
-  c.fillStyle = '#000000';
-  anglep -= Math.PI / 30;
+	
+  for (var i = 0; i < 60; i++) {
+    if (i % 5 == 0) {
+	  xs = xcanv - (dist * Math.sin(anglen)) + xc - 2;
+	  ys = ycanv - (dist * Math.cos(anglen)) + yc + 4;
+	  c.beginPath();
+	  c.strokeStyle = 'black';
+	  c.font = "bold 24px serif";
+	  c.fillText(i/5+1, xs, ys);
+	  anglen -= Math.PI / 6;
+	  anglep -= Math.PI / 30;
+    }
+    else {
+      xs = xcanv - (dist * Math.sin(anglep));
+      ys = ycanv - (dist * Math.cos(anglep));
+      c.beginPath();
+      c.arc(xs, ys, radiuss, 0, Math.PI * 2, false);
+      c.strokeStyle = '#39FF14';	//'black';
+      c.stroke();
+      c.fillStyle = '#39FF14';
+      c.fill();
+      c.fillStyle = '#000000';
+      anglep -= Math.PI / 30;
+    }
+  //  console.log(anglen, " ", anglep);
   }
-//  console.log(anglen, " ", anglep);
-}
-
-	  
+  
   se = A.getSeconds();
   mi = A.getMinutes();
   ho = A.getHours()%12;
@@ -79,7 +78,7 @@ for (var i = 0; i < 60; i++) {
   angleh = -ho * Math.PI / 30;
   xs = xcanv - (dists * Math.sin(angles));
   ys = ycanv - (dists * Math.cos(angles));
-//  console.log(ho, "  ", mi, ' ', se);
+  //  console.log(ho, "  ", mi, ' ', se);
   c.beginPath();
   c.moveTo(xcanv, ycanv);
   c.lineTo(xs, ys);
@@ -120,5 +119,3 @@ start_time_c();
 //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
 //https://www.youtube.com/watch?v=EO6OkltgudE
 //https://www.adobe.com/creativecloud/design/hub/guides/neon-green-color-guide.html#:~:text=The%20neon%20green%20hex%20code,%3A%20255%2C%20B%3A%2020.
-
-
